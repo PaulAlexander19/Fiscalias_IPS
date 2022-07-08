@@ -14,7 +14,6 @@ class Consultas(models.Model):
     idfiscalia = models.ForeignKey('Fiscalia', models.DO_NOTHING, db_column='idFiscalia', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'Consultas'
 
 
@@ -29,7 +28,6 @@ class Fiscalia(models.Model):
     fissituación = models.CharField(db_column='FisSituación', max_length=45, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'Fiscalia'
 
 
@@ -41,7 +39,6 @@ class FiscaliaDet(models.Model):
     fiscalia_detcol = models.CharField(db_column='Fiscalia_detcol', max_length=45, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'Fiscalia_det'
 
 
@@ -51,7 +48,6 @@ class Historial(models.Model):
     consultas = models.IntegerField(db_column='Consultas')  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'Historial'
         unique_together = (('idhistorial', 'consultas'),)
 
@@ -64,5 +60,4 @@ class Usuario(models.Model):
     usuariocol = models.CharField(db_column='Usuariocol', max_length=45, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'Usuario'
