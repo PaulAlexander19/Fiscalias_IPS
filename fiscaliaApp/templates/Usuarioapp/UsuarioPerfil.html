@@ -1,0 +1,41 @@
+{% extends '../base.html' %}
+
+{% load static %}
+{% block title %}
+    Usuario
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="buscador">
+        <form name="formulario" target="_blank">
+            <label>Tipos de busqueda de Fiscalias</label>
+            <select name="centrales">
+                <option>» Escoge «</option>
+                <option value="">Especialidad</option>
+                <option value="">Codigo</option>
+                <option value="">Distrito</option>
+                <option value="">Tipo de Fiscalia</option>
+                <option value="">Situacion</option>
+                <input type="button" value="Ver" />
+        </form>    
+    </div>
+
+    <div class="perfil">
+        <img src={{object.usuaImagen}} alt="imagenPerfil">
+    </div>
+
+    <div class="datosUsua">
+        <p>Id-Fiscalia : {{object.idfiscalia}}</p>
+        <p>NOMBRE: {{object.UsuaNombre}}</p>
+        <p>APELLIDO: {{object.UsuaApellido}}</p>
+        <p>DIRECCION: {{object.UsuaDireccion}}</p>
+    </div>
+
+    <div class="cuenta">
+        <input type="button" value="Eliminar Cuenta">
+        <input type="button" value="Actualizar Cuenta">
+    </div>
+
+{% endblock %}
