@@ -18,7 +18,8 @@ class Consultas(models.Model):
 
 
 class Fiscalia(models.Model):
-    idfiscalia = models.OneToOneField('FiscaliaDet', models.DO_NOTHING, db_column='idFiscalia', primary_key=True)  # Field name made lowercase.
+    #idfiscalia = models.OneToOneField('FiscaliaDet', models.DO_NOTHING, db_column='idFiscalia', primary_key=True)  # Field name made lowercase.
+    idfiscalia = models.IntegerField(db_column='idFiscalia', primary_key=True)  # Field name made lowercase.
     fisdepartamento = models.CharField(db_column='FisDepartamento', max_length=45, blank=True, null=True)  # Field name made lowercase.
     fisprovincia = models.CharField(db_column='FisProvincia', max_length=45, blank=True, null=True)  # Field name made lowercase.
     fisdistrito = models.CharField(db_column='FisDistrito', max_length=45, blank=True, null=True)  # Field name made lowercase.
@@ -32,7 +33,8 @@ class Fiscalia(models.Model):
 
 
 class FiscaliaDet(models.Model):
-    idfiscaliadet = models.IntegerField(db_column='idFiscaliaDet', primary_key=True)  # Field name made lowercase.
+    #idfiscaliadet = models.IntegerField(db_column='idFiscaliaDet', primary_key=True)  # Field name made lowercase.
+    idfiscaliadet = models.OneToOneField('Fiscalia', models.DO_NOTHING, db_column='idFiscaliaDet', primary_key=True)  # Field name made lowercase.
     fisdetcorreo = models.CharField(db_column='FisDetCorreo', max_length=45, blank=True, null=True)  # Field name made lowercase.
     fisdetdireccion = models.CharField(db_column='FisDetDireccion', max_length=45, blank=True, null=True)  # Field name made lowercase.
     fisdetencargado = models.CharField(db_column='FisDetEncargado', max_length=45, blank=True, null=True)  # Field name made lowercase.
@@ -45,11 +47,12 @@ class FiscaliaDet(models.Model):
 class Historial(models.Model):
     idhistorial = models.IntegerField(db_column='idHistorial', primary_key=True)  # Field name made lowercase.
     idusuario = models.ForeignKey('Usuario', models.DO_NOTHING, db_column='idUsuario', blank=True, null=True)  # Field name made lowercase.
-    consultas = models.IntegerField(db_column='Consultas')  # Field name made lowercase.
+    idconsultas = models.ForeignKey('Consultas', models.DO_NOTHING, db_column='Consultas', blank=True, null=True)  # Field name made lowercase.
+    #consultas = models.IntegerField(db_column='Consultas')  # Field name made lowercase.
 
     class Meta:
         db_table = 'Historial'
-        unique_together = (('idhistorial', 'consultas'),)
+        #unique_together = (('idhistorial', 'consultas'),)
 
 
 class Usuario(models.Model):
