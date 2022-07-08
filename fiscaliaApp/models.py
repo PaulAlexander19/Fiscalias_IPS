@@ -45,11 +45,12 @@ class FiscaliaDet(models.Model):
 class Historial(models.Model):
     idhistorial = models.IntegerField(db_column='idHistorial', primary_key=True)  # Field name made lowercase.
     idusuario = models.ForeignKey('Usuario', models.DO_NOTHING, db_column='idUsuario', blank=True, null=True)  # Field name made lowercase.
-    consultas = models.IntegerField(db_column='Consultas')  # Field name made lowercase.
+    idconsultas = models.ForeignKey('Consultas', models.DO_NOTHING, db_column='Consultas', blank=True, null=True)  # Field name made lowercase.
+    #consultas = models.IntegerField(db_column='Consultas')  # Field name made lowercase.
 
     class Meta:
         db_table = 'Historial'
-        unique_together = (('idhistorial', 'consultas'),)
+        #unique_together = (('idhistorial', 'consultas'),)
 
 
 class Usuario(models.Model):
