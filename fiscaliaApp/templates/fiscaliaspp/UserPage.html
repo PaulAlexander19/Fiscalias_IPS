@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 >Bienvenido(a) {{ object.usuariocol }}</h2>
+<div>
+  <div>
+    <h2>Información de Usuario</h2>    
+  </div>
+  <div>
+    <p>Usuario-ID: {{object.idusuario}}</p>
+    <p>Usuario: {{object.usuariocol}}</p>
+    <p>Nombre: {{object.username}}</p>
+    <p>Apellido: {{object.nombre}}</p>
+    <p>Direccion: {{object.dirección}}</p>    
+  </div>
+</div>
+{% endblock %}
