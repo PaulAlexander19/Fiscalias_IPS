@@ -19,8 +19,8 @@ class Fiscalias(models.Model):
 
 class Consulta(models.Model):
     ConID = models.AutoField(primary_key=True)
-    UserID = models.ForeignKey(Usuario, models.DO_NOTHING, blank=True, null=True) # UserID es un Objeto
-    FisID = models.ForeignKey(Fiscalias, models.DO_NOTHING, blank=True, null=True)
+    UserID = models.ForeignKey(Usuario, on_delete=models.CASCADE, blank=True, null=True) # UserID es un Objeto
+    FisID = models.ForeignKey(Fiscalias, on_delete=models.CASCADE, blank=True, null=True)
     Fecha = models.DateField(blank=True, null=True, auto_now_add=True)
     
     def __str__(self):
