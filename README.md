@@ -11,3 +11,8 @@ Donde se puede realizar busquedas
 - Silva Torres de la Gala Ricardo Paul
 
 ###### [Universidad Nacional San Agustin de Arequipa](https://www.unsa.edu.pe)
+
+Para los integrantes de grupo:
+Para correr el servidor si ocurre el problema sobre tkinter, instalarlo de manera local no virtual:
+Para linux: sudo apt-get install python3-tk
+Para windows: idk 
