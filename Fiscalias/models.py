@@ -1,5 +1,6 @@
 from django.db import models
 from Usuario.models import Usuario
+from django.urls import reverse
 class Fiscalias(models.Model):
     FisID = models.AutoField(primary_key=True)
     CodSiga = models.CharField(max_length=10, blank=True, null=True)
@@ -16,6 +17,10 @@ class Fiscalias(models.Model):
 
     def __str__(self):
         return self.Nombre
+    
+    def get_absolute_url(self):
+        return reverse("fiscalia-detail", kwargs={"pk": self.pk})
+    
 
 class Consulta(models.Model):
     ConID = models.AutoField(primary_key=True)
