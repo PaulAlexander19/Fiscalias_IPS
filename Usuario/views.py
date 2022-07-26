@@ -9,7 +9,7 @@ def UsuarioRegister(request):
     form.save()
     form = UsuarioForm()
 
-  context = (
+  context = {
     'form': form 
-  )
-  return render(request, '', context)
+  }
+  return render(request, 'Usuario/usuarioRegister.html', context)
