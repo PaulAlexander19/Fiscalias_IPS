@@ -1,13 +1,115 @@
 {% extends 'base.html' %}
-{% block title %}
-  Lista de Fiscalias
-{% endblock %}
+
+
+  {% block title %}
+    Lista de Fiscalias
+  {% endblock %}
+
+
 {% block body %}
-<h1>Listado de Fiscalías</h1>
-{% for instance in object_list %}
-  <p>
-    {{ instance.FisID }} -
-    <a href='{{ instance.get_absolute_url }}'>{{ instance.Nombre }}</a>
-  </p>
-{% endfor %}
+  <h1>FISCALIAS DEL PERÚ</h1>
+  
+  <section class="section">
+    <form class="container-fluid">
+      <div class="input-group">
+        <label for="idbuscador"></label>
+        <input type="text" class="form-control" id="idbuscador" placeholder="BUSCAR FISCALIA">
+        <span class="input-group-text" id="basic-addon1"><span class="material-symbols-outlined" id="basic-addon1">search</span></span>
+      </div>
+      <table class="container text-center">
+        <tr>
+          <label for="idtipo"></label>
+          <th>
+            <select class="opcionMultiple1 my-3" id="idtipo" name="tipo">
+              <option value="A">Tipo</option>
+              {% for instance in object_list %}
+                <option value="A">{{ instance.Tipo }}</option>
+              {% endfor %}
+          </th>
+          <label for="idEspecialidad"></label>
+          <th>
+            <select class="opcionMultiple my-3" id="idEspecialidad" name="Especialidad">
+              <option value="A">Especialidad</option>
+              {% for instance in object_list %}
+                <option value="A">{{ instance.Especialidad }}</option>
+              {% endfor %}
+          </th>
+        </tr>
+
+        <tr>
+          <label for="idDistrito"></label>
+          <th>
+            <select class="opcionMultiple1 my-3" id="idDistrito" name="Distrito">
+              <option value="A">Distrito</option>
+              {% for instance in object_list %}
+                <option value="A">{{ instance.Distrito }}</option>
+              {% endfor %}
+          </th>
+          <label for="idTipoFiscalia"></label>
+          <th>
+            <select class="opcionMultiple my-3" id="idTipoFiscalia" name="Nombre">
+              <option value="A">Nombre</option>
+              {% for instance in object_list %}
+                <option value="A">{{ instance.Nombre }}</option>
+              {% endfor %}
+          </th>
+        </tr>
+
+        <tr>
+          <label for="idCodigo"></label>
+          <th>
+            <select class="opcionMultiple1 my-3" id="idCodigo" name="Codigo">
+              <option value="A">Codigo</option>
+              {% for instance in object_list %}
+                <option value="A">{{ instance.CodSiga }}</option>
+              {% endfor %}
+          </th>
+          <label for="idSituacion"></label>
+          <th>
+            <select class="opcionMultiple my-3" id="idSituacion" name="Situacion">
+              <option value="A">Situacion</option>
+              {% for instance in object_list %}
+                <option value="A">{{ instance.Situacion }}</option>
+              {% endfor %}
+          </th>
+        </tr>
+          
+      </table>
+    </form>
+  </section>
+  
+  <article class="article">
+    <div class="my-3 p-3">
+      <h6 class="border-bottom pb-2 mb-0">Resultado de busquedad</h6>
+      {% for instance in object_list %}
+      <div class="d-flex pt-3">
+        <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="40" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"></rect><text x="40%" y="50%" fill="#000" dy=".3em">{{ instance.FisID }}</text></svg>
+        <div class="pb-3 small border-bottom w-100">
+          <div class="justify-content-between">
+            <strong class="text-dark">{{ instance.Especialidad }}</strong>
+          </div>
+        </div>
+        <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="80" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"></rect><text x="10%" y="50%" fill="#000" dy=".3em"><a href="#" id="link-new">Ver Mapa</a></text></svg>
+      </div>
+      {% endfor %}
+      <small class="d-block text-end mt-3">
+        <a href="#">More</a>
+      </small>
+    </div>
+  </article>
+  
+  <!--https://www.lawebdelprogramador.com/foros/HTML/1425439-Scroll-en-cuerpo-formulario-HTML.html-->
+
+  <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
 {% endblock %}

@@ -6,6 +6,7 @@ class Fiscalias(models.Model):
     CodSiga = models.CharField(max_length=10, blank=True, null=True)
     Nombre = models.CharField(max_length=255, blank=True, null=True)
     Distrito = models.CharField(max_length=100, blank=True, null=True)
+    ImgMapa = models.ImageField(upload_to='fiscalias', blank=True, null=True)
     Especialidad = models.CharField(max_length=100, blank=True, null=True)
     Tipo = models.CharField(max_length=100, blank=True, null=True)
     Situacion = models.CharField(max_length=100, blank=True, null=True)
