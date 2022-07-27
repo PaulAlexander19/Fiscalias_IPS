@@ -1,0 +1,117 @@
+.bordeee{
+    width: 100%;
+    background-color: #212529;
+}
+.elemento{
+    text-align: center;
+    padding-right: 40px;
+}
+.separador{
+    margin-left: 10px;
+}
+.section{
+    float: left;
+    margin: 30px;
+    margin-left: 120px;
+    width: 30%;
+    height: 500px;
+    padding: 50px;
+    border-radius: 10px;
+    background-color: #373b3e;
+}
+
+.article{
+    margin: 90px;
+    margin-right: 80px;
+    padding: 5px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    height: 330px;
+    overflow-y: scroll;
+    scrollbar-color: rgb(184, 18, 18);
+    scrollbar-width: 7px;
+    overflow-x: hidden;
+    width: 50%;
+    background-color: #cecece;
+}
+
+.footer{
+    float: right;
+    background-color: #000;
+    padding: 10px;
+    color: white;
+    display: block;
+}
+
+
+.idbuscador{
+    border-radius: 10px;
+    border-color: #fff;
+}
+.tabla{
+    padding: 25px;
+    text-align: center;
+}
+.opcionMultiple1{
+    width: 200%;
+    border-radius: 5px;
+    padding: 5px;
+    border: #fff;
+}
+.opcionMultiple{
+    float:right;
+    width: 50%;
+    border-radius: 5px;
+    padding: 5px;
+    border: #fff;
+}
+
+#link-new{
+    text-decoration: none;
+}
+#link-new:hover{
+    background-color: rgb(57, 100, 219);
+}
+
+
+.material-symbols-outlined {
+    size: 1000px;
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 1000,
+    'GRAD' 0,
+    'opsz' 38;
+}
+
+h1, .h1 {
+    font-size: calc(1.375rem + 1.5vw);
+    color: #4c504f;
+    text-align: center;
+    padding: 30px;
+    font-family: serif;
+}
+h6, .h6 {
+    font-size: 1rem;
+    text-align: center;
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.nav-link:hover{
+    color: black;
+}
+
+.box1{
+    float: left;
+    width: 35%;
+    margin:2.5%;
+    background-color: brown;
+    padding: 20px;
+}
+
+.box2{
+    float:left;
+    padding: 20px;
+    margin: 2.5%;
+    width: 55%;
+    background-color: burlywood;
+}
