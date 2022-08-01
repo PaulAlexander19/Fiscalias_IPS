@@ -2,10 +2,26 @@
 {% block title %}
   Registro
 {% endblock %}
+
 {% block body %}
-<h1>Registro de Usuario</h1>
-<form method='POST'> {% csrf_token %}
-  {{form.as_p}}
-  <input type='submit' value='Registrarse'/>
-</form>
+{% if messages %}
+    {% for message in messages %}
+    <div class="notification {{ message.tags}}">
+        {{ message }}
+    </div>
+    {% endfor %}
+  {% endif %}
+
+    <div class="main">
+      <h1>Registro de Usuario</h1>
+        <nav class   ="second-nav">
+          <form method ='POST'> 
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type ='submit' >Registrarses</button>
+          </form>
+        </nav>
+    </div>
+
 {% endblock %}
+
