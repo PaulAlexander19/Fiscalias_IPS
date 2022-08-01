@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}
+  Logout
+{% endblock %}
+
+{% block body %}
+{% if messages %}
+    {% for message in messages %}
+    <div class="notification {{ message.tags}}">
+        {{ message }}
+    </div>
+    {% endfor %}
+  {% endif %}
+
+    <div class="main">
+    <h1>Logout</h1>
+    <nav class   ="second-nav">
+      Saliste de tu cuenta
+    </nav>
+    </div>
+
+{% endblock %}
